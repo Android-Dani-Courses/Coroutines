@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DefaultTextViewStyle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_view_size</item>
+        <item name="android:fontFamily">serif</item>
+    </style>
+
+    <style name="DefaultEditTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_view_size</item>
+        <item name="android:fontFamily">serif-monospace</item>
+    </style>
+
+    <style name="UserTextViewStyle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/user_text_view_size</item>
+        <item name="android:fontFamily">serif</item>
+    </style>
+</resources>

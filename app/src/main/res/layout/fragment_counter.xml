@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="@dimen/default_margin">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/int_counter_tv"
+        style="@style/DefaultTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/int_counter_throw_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/int_counter_stop_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop"
+        app:layout_constraintBottom_toBottomOf="@+id/int_counter_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/int_counter_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/int_counter_throw_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/throw_label"
+        app:layout_constraintBottom_toBottomOf="@+id/int_counter_tv"
+        app:layout_constraintEnd_toStartOf="@+id/int_counter_stop_btn"
+        app:layout_constraintTop_toTopOf="@+id/int_counter_tv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/double_counter_tv"
+        style="@style/DefaultTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/double_counter_throw_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/int_counter_tv"
+        tools:text="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/double_counter_stop_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop"
+        app:layout_constraintBottom_toBottomOf="@+id/double_counter_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/double_counter_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/double_counter_throw_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/throw_label"
+        app:layout_constraintBottom_toBottomOf="@+id/double_counter_tv"
+        app:layout_constraintEnd_toStartOf="@+id/double_counter_stop_btn"
+        app:layout_constraintTop_toTopOf="@+id/double_counter_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/start_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/double_counter_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/stop_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

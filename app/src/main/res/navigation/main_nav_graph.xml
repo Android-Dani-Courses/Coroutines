@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.everis.coroutines.presentation.activities.main.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_counterFragment"
+            app:destination="@id/counterFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_sumFragment"
+            app:destination="@id/sumFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_randomUsersFragment"
+            app:destination="@id/randomUsersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/counterFragment"
+        android:name="com.everis.coroutines.presentation.activities.main.counter.CounterFragment"
+        android:label="fragment_counter"
+        tools:layout="@layout/fragment_counter" />
+    
+    <fragment
+        android:id="@+id/sumFragment"
+        android:name="com.everis.coroutines.presentation.activities.main.sum.SumFragment"
+        android:label="fragment_sum"
+        tools:layout="@layout/fragment_sum" />
+
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.everis.coroutines.presentation.activities.main.location.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" />
+
+    <fragment
+        android:id="@+id/randomUsersFragment"
+        android:name="com.everis.coroutines.presentation.activities.main.randomusers.RandomUsersFragment"
+        android:label="fragment_random_users"
+        tools:layout="@layout/fragment_random_users" />
+
+</navigation>
