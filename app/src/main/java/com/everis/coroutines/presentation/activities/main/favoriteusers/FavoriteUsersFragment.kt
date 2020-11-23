@@ -1,4 +1,4 @@
-package com.everis.coroutines.presentation.activities.main.randomusers
+package com.everis.coroutines.presentation.activities.main.favoriteusers
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,48 +7,43 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.everis.coroutines.CoroutinesApp
-import com.everis.coroutines.databinding.FragmentRandomUsersBinding
+import com.everis.coroutines.databinding.FragmentFavoriteUsersBinding
 import com.everis.coroutines.usecase.users.GetFavoriteUsers
-import com.everis.coroutines.usecase.users.GetUsers
 import com.everis.coroutines.usecase.users.RemoveFavoriteUser
-import com.everis.coroutines.usecase.users.SaveFavoriteUser
 
-class RandomUsersFragment : Fragment() {
-    private var _binding: FragmentRandomUsersBinding? = null
+class FavoriteUsersFragment : Fragment() {
+    private var _binding: FragmentFavoriteUsersBinding? = null
     private val binding get() = _binding!!
     private val app by lazy { requireActivity().application as CoroutinesApp }
     private val randomUsersRepository by lazy { app.randomUsersRepository }
-    private val viewModel by viewModels<RandomUsersViewModel> {
-        RandomUsersViewModelProvider(
-            getUsers = GetUsers(repository = randomUsersRepository),
+    private val viewModel by viewModels<FavoriteUsersViewModel> {
+        FavoriteUsersViewModelProvider(
             getFavoriteUsers = GetFavoriteUsers(repository = randomUsersRepository),
-            saveFavoriteUser = SaveFavoriteUser(repository = randomUsersRepository),
             removeFavoriteUser = RemoveFavoriteUser(repository = randomUsersRepository),
         )
     }
 
-    private lateinit var adapter: RandomUsersAdapter
+    private lateinit var adapter: FavoriteUsersAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentRandomUsersBinding.inflate(inflater, container, false)
+        _binding = FragmentFavoriteUsersBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        adapter = RandomUsersAdapter(
-            lifecycleOwner = viewLifecycleOwner,
-            favoriteUsersLD = viewModel.favoriteUsersLD,
+        adapter = FavoriteUsersAdapter(
             onUserClick = viewModel::onUserClick,
         )
-        binding.usersRv.setHasFixedSize(true)
-        binding.usersRv.adapter = adapter
+        binding.favoriteUsersRv.setHasFixedSize(true)
+        binding.favoriteUsersRv.adapter = adapter
 
-        viewModel.usersLD.observe(viewLifecycleOwner) { users ->
+
+        viewModel.favoriteUsersLD.observe(viewLifecycleOwner) { users ->
             adapter.submitList(users)
         }
     }

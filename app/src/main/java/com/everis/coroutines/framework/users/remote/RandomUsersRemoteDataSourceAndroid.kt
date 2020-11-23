@@ -1,10 +1,10 @@
-package com.everis.coroutines.framework.users
+package com.everis.coroutines.framework.users.remote
 
-import com.everis.coroutines.data.randomusers.RandomUsersDataSource
+import com.everis.coroutines.data.randomusers.RandomUsersRemoteDataSource
 import com.everis.coroutines.domain.User
 import java.lang.Exception
 
-class RandomUsersManager(private val service: RandomUsersService) : RandomUsersDataSource {
+class RandomUsersRemoteDataSourceAndroid(private val service: RandomUsersService) : RandomUsersRemoteDataSource {
     override suspend fun getUsers(): List<User> = try {
         val response = service.getUsers()
         if (response.isSuccessful) {

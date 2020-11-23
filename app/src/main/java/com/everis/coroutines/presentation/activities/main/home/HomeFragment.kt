@@ -41,6 +41,9 @@ class HomeFragment : Fragment() {
         binding.randomApiBtn.setOnClickListener {
             viewModel.onRandomAPIClick()
         }
+        binding.favoriteUesrsBtn.setOnClickListener {
+            viewModel.onFavoriteUsersClick()
+        }
     }
 
     override fun onDestroyView() {

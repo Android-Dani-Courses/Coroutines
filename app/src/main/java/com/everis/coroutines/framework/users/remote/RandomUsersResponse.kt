@@ -1,4 +1,4 @@
-package com.everis.coroutines.framework.users
+package com.everis.coroutines.framework.users.remote
 
 data class RandomUsersResponse(
     val results: List<Result> = emptyList(),

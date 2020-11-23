@@ -4,7 +4,7 @@ import android.content.Context
 import android.os.Looper
 import com.everis.coroutines.data.location.LocationDataSource
 import com.everis.coroutines.domain.CoroutineLocation
-import com.everis.coroutines.framework.permission.PermissionManager
+import com.everis.coroutines.framework.permission.PermissionDataSourceAndroid
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
@@ -12,13 +12,13 @@ import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 
-class LocationManager(
+class LocationDataSourceAndroid(
     private val context: Context,
-    private val permissionManager: PermissionManager
+    private val permissionDataSource: PermissionDataSourceAndroid
 ) : LocationDataSource {
     override suspend fun getLastLocation(): CoroutineLocation =
         suspendCancellableCoroutine { continuation ->
-            permissionManager.checkLocationPermission(
+            permissionDataSource.checkLocationPermission(
                 failure = {
                     continuation.resume(CoroutineLocation())
                 },
@@ -46,7 +46,7 @@ class LocationManager(
 
     override fun startLocation(result: (CoroutineLocation) -> Unit) {
         stopLocation()
-        permissionManager.checkLocationPermission(
+        permissionDataSource.checkLocationPermission(
             failure = {
                 result(CoroutineLocation())
             },

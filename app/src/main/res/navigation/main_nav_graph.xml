@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_homeFragment_to_randomUsersFragment"
             app:destination="@id/randomUsersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteUsersFragment"
+            app:destination="@id/favoriteUsersFragment" />
     </fragment>
 
     <fragment
@@ -47,5 +50,10 @@
         android:name="com.everis.coroutines.presentation.activities.main.randomusers.RandomUsersFragment"
         android:label="fragment_random_users"
         tools:layout="@layout/fragment_random_users" />
+
+    <fragment
+        android:id="@+id/favoriteUsersFragment"
+        android:name="com.everis.coroutines.presentation.activities.main.favoriteusers.FavoriteUsersFragment"
+        android:label="FavoriteUsersFragment" />
 
 </navigation>

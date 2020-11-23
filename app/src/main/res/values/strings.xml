@@ -5,6 +5,7 @@
     <string name="sum">Sum</string>
     <string name="location">Location</string>
     <string name="random_api">Random API</string>
+    <string name="favorite_users">Favorite users</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
     <string name="throw_label">Throw</string>

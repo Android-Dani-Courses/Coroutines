@@ -26,4 +26,8 @@ class HomeViewModel(
         navigator.goTo(HomeFragmentDirections.actionHomeFragmentToRandomUsersFragment())
     }
 
+    fun onFavoriteUsersClick() {
+        navigator.goTo(HomeFragmentDirections.actionHomeFragmentToFavoriteUsersFragment())
+    }
+
 }

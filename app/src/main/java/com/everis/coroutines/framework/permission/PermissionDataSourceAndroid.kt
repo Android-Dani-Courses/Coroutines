@@ -9,7 +9,7 @@ import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 
-class PermissionManager(private val context: Context) {
+class PermissionDataSourceAndroid(private val context: Context) {
     fun checkLocationPermission(failure: () -> Unit, success: () -> Unit) =
         Dexter.withContext(context)
             .withPermissions(ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION)
